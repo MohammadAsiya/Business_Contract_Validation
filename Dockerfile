@@ -13,6 +13,8 @@ RUN pip install --no-cache-dir streamlit
 RUN pip install --no-cache-dir transformers
 RUN pip install --no-cache-dir PyPDF2
 RUN pip install --no-cache-dir nltk
+RUN pip install --no-cache-dir pdfplumber
+RUN pip install --no-cache-dir pymupdf
 
 # Copy the rest of the application code into the container.
 COPY . .
@@ -24,4 +26,4 @@ ENV PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 EXPOSE 8501
 
 # Command to run the Streamlit app.
-CMD ["streamlit", "run", "contractnew.py"]
+CMD ["streamlit", "run", "business_contract_validation.py"]
